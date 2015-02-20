@@ -14,12 +14,9 @@
 <tbody>
   <% @statuses.each do |status| %>
     <tr>
-      <td><%= link_to status.user_name, status %></td>
-      <td><%= status.description %></td>
-      <td class="text-right">
-        <%= link_to 'Edit', edit_status_path(status)%>
-        <%= link_to 'Delete', status, class: "", method: :delete, data: { confirm: 'Are you sure?' } %>
-      </td>
+      <td><%=  status.user_name %></td>
+      <td><%= link_to status.description, status %></td>
+      <td><%=  status.likes %></td>
     </tr>
   <% end %>
 </tobdy>

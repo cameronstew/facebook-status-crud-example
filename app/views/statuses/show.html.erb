@@ -14,4 +14,9 @@
   <span>
     <%= @status.description %>
   </span>
+  <span> <%= button_to 'Like', like_path(@status)  %>
 </p>
+<divclass="text-right">
+  <%= link_to 'Edit', edit_status_path(@status)%>
+  <%= link_to 'Delete', @status, class: "", method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
