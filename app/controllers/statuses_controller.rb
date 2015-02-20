@@ -13,8 +13,12 @@ class StatusesController < ApplicationController
     @status = Status.new(status_params)
 
       if @status.save
-        redirect_to @statuses, notice: 'Status was successfully created!'
+        redirect_to @status, notice: 'Status was successfully created!'
+
       else
+        flash[:alert] = 'There were some errors on the page:'
+        flash[:alert] << '<br>'
+        flash[:alert] << @status.errors.full_messages.join('<br>')
         render :new
       end
 
@@ -29,6 +33,9 @@ class StatusesController < ApplicationController
     if @status.update(status_params)
         redirect_to @status, notice: 'Status was successfully updated!'
     else
+        flash[:alert] = 'There were some errors on the page:'
+        flash[:alert] << '<br>'
+        flash[:alert] << @status.errors.full_messages.join('<br>')
         render :edit
     end
   end
