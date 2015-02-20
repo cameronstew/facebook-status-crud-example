@@ -1,0 +1,10 @@
+
+<%= form_for @status do |f| %>
+<%= f.label "Username" %>
+<%= f.text_field :user_name %>
+<%= f.label "Status" %>
+<%= f.text_field :description %>
+
+<%= f.submit "Update Status" %>
+
+<% end %>
