@@ -1,0 +1,22 @@
+<h1> Check out what all your friends have been up to! </h1>
+
+
+<%= link_to 'New Status!', new_status_path %>
+
+<table>
+<thead>
+  <tr>
+    <th>Username</th>
+    <th>Status</th>
+    <th>Likes</th>
+  </tr>
+</thead>
+<tbody>
+  <% @statuses.each do |status| %>
+    <tr>
+      <td><%= status.user_name %></td>
+      <td><%= status.description %></td>
+    </tr>
+  <% end %>
+</tobdy>
+</table>

@@ -13,7 +13,7 @@ class StatusesController < ApplicationController
     @status = Status.new(status_params)
 
       if @status.save
-        redirect_to @status, notice: 'Status was successfully updated!'
+        redirect_to @statuses, notice: 'Status was successfully updated!'
       else
         render :new
       end
@@ -26,6 +26,6 @@ class StatusesController < ApplicationController
 
   private
   def status_params
-    params.require(:status).permit(:username, :description)
+    params.require(:status).permit(:user_name, :description)
   end
 end
