@@ -39,6 +39,13 @@ class StatusesController < ApplicationController
     @status = Status.find(params[:id])
   end
 
+
+  def destroy
+    @status = Status.find(params[:id])
+    @status.destroy
+    redirect_to root_path
+  end
+
   private
   def status_params
     params.require(:status).permit(:user_name, :description)
